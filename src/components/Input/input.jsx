@@ -2,7 +2,7 @@
 // import css from './input.css';
 
 
-export const Form = ({}) => {
+export const Form = () => {
   return (
     <input
       type="text"

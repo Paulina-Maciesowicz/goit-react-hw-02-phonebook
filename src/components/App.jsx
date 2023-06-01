@@ -12,10 +12,10 @@ export class Component extends React.Component {
   // }
 
   state = {
-    contacts: [],
+    contacts: ['Michael Jackson', 'Elvis Presley', 'Maciek Lazienka'],
     name: '',
-  }
-}
+  };
+};
 
 export const App = () => {
   return (
