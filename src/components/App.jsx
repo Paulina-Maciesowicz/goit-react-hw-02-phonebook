@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form } from './Input/Input';
+import { SignUpForm } from './Input/Input';
 
 export class Component extends React.Component {
   // eslint-disable-next-line no-useless-constructor
@@ -42,8 +42,7 @@ export const App = () => {
         color: '#010101',
       }}
     >
-      <h2>Phonebook</h2>
-      <Form />
+      <SignUpForm />
       <Component />
     </div>
   );
