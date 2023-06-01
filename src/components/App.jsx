@@ -3,16 +3,17 @@ import { Form } from './Input/Input';
 
 export class Component extends React.Component {
   // eslint-disable-next-line no-useless-constructor
+
+  //   constructor(props) {
+  //     super(props);
+  //     this.contacts = this.contacts.bind(this);
+  //     this.name = this.name.bind(this);
+  //   }
+  // }
+
   state = {
     contacts: [],
     name: '',
-  };
-
-  constructor(props) {
-    super(props);
-    this.good = this.good.bind(this);
-    this.neutral = this.neutral.bind(this);
-    this.bad = this.bad.bind(this);
   }
 }
 
