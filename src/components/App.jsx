@@ -1,3 +1,5 @@
+import { form } from './Input/input';
+
 export const App = () => {
   return (
     <div
@@ -10,6 +12,7 @@ export const App = () => {
         color: '#010101'
       }}
     >
+      <form />
       React homework template
     </div>
   );
