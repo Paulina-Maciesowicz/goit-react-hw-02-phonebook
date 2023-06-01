@@ -19,18 +19,17 @@ import React from 'react';
 //   );
 // };
 
-// const INITIAL_STATE = {
-//   login: '',
-//   email: '',
-//   password: '',
-// };
+const INITIAL_STATE = {
+  contacts: ['Michael Jackson', 'Elvis Presley', 'Maciek Lazienka'],
+  name: '',
+};
 
 export class SignUpForm extends React.Component {
-  //   state = { ...INITIAL_STATE };
-  state = {
-    contacts: ['Michael Jackson', 'Elvis Presley', 'Maciek Lazienka'],
-    name: '',
-  };
+    state = { ...INITIAL_STATE };
+//   state = {
+//     contacts: ['Michael Jackson', 'Elvis Presley', 'Maciek Lazienka'],
+//     name: '',
+//   };
 
   // Dla wszystkich elementów wykorzystamy jedną funkcję obsługującą zmianę stanu ('handler').
   // Inputy będziemy rozróżniać za pomocą atrybutu `name`
@@ -69,6 +68,8 @@ export class SignUpForm extends React.Component {
             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
             required
+            value={name}
+            onChange={this.handleChange}
           />
         </label>
 
