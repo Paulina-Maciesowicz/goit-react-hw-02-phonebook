@@ -1,7 +1,8 @@
 // import PropTypes from 'prop-types';
 // import css from './input.css';
 
-export const form = ({}) => {
+
+export const Form = ({}) => {
   return (
     <input
       type="text"
