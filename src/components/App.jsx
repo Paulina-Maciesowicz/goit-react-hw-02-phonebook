@@ -15,7 +15,20 @@ export class Component extends React.Component {
     contacts: ['Michael Jackson', 'Elvis Presley', 'Maciek Lazienka'],
     name: '',
   };
-};
+
+  render() {
+    return (
+      <>
+        <h2>Contacts</h2>
+        <ul>
+          {this.state.contacts.map(contact => (
+            <li>{contact}</li>
+          ))}{' '}
+        </ul>
+      </>
+    );
+  }
+}
 
 export const App = () => {
   return (
@@ -29,7 +42,9 @@ export const App = () => {
         color: '#010101',
       }}
     >
+      <h2>Phonebook</h2>
       <Form />
+      <Component />
     </div>
   );
 };
