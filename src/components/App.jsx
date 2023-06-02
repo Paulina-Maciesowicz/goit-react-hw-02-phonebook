@@ -1,34 +1,6 @@
 import React from 'react';
 import { SignUpForm } from './Input/Input';
-
-export class Component extends React.Component {
-  // eslint-disable-next-line no-useless-constructor
-
-  //   constructor(props) {
-  //     super(props);
-  //     this.contacts = this.contacts.bind(this);
-  //     this.name = this.name.bind(this);
-  //   }
-  // }
-
-  state = {
-    contacts: ['Michael Jackson', 'Elvis Presley', 'Maciek Lazienka'],
-    name: '',
-  };
-
-  render() {
-    return (
-      <>
-        <h2>Contacts</h2>
-        <ul>
-          {this.state.contacts.map(contact => (
-            <li>{contact}</li>
-          ))}{' '}
-        </ul>
-      </>
-    );
-  }
-}
+import { Component } from './Input/Input';
 
 export const App = () => {
   return (
@@ -42,6 +14,7 @@ export const App = () => {
         color: '#010101',
       }}
     >
+      <Component/>
       <SignUpForm />
       <Component />
     </div>

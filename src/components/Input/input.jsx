@@ -1,4 +1,8 @@
 import React from 'react';
+const INITIAL_STATE = {
+  contacts: ['Michael Jackson', 'Elvis Presley', 'Maciek Lazienka'],
+  name: '',
+};
 // import PropTypes from 'prop-types';
 // import css from './input.css';
 
@@ -18,18 +22,48 @@ import React from 'react';
 //     </>
 //   );
 // };
+export class Component extends React.Component {
+  // eslint-disable-next-line no-useless-constructor
 
-const INITIAL_STATE = {
-  contacts: ['Michael Jackson', 'Elvis Presley', 'Maciek Lazienka'],
-  name: '',
-};
+  //   constructor(props) {
+  //     super(props);
+  //     this.contacts = this.contacts.bind(this);
+  //     this.name = this.name.bind(this);
+  //   }
+  // }
+
+  state = { ...INITIAL_STATE };
+
+  render() {
+    return (
+      <>
+        <h2>Contacts</h2>
+        <ul>
+          {this.state.contacts.map(contact => (
+            <li>{contact}</li>
+          ))}{' '}
+        </ul>
+      </>
+    );
+  }
+}
 
 export class SignUpForm extends React.Component {
-    state = { ...INITIAL_STATE };
-//   state = {
-//     contacts: ['Michael Jackson', 'Elvis Presley', 'Maciek Lazienka'],
-//     name: '',
-//   };
+  state = { ...INITIAL_STATE };
+
+  static defaultProps = {
+    contacts: [],
+  };
+
+  static propTypes = {
+    contacts: Array,
+  };
+
+  name = this.props.contacts;
+  //   state = {
+  //     contacts: ['Michael Jackson', 'Elvis Presley', 'Maciek Lazienka'],
+  //     name: '',
+  //   };
 
   // Dla wszystkich elementów wykorzystamy jedną funkcję obsługującą zmianę stanu ('handler').
   // Inputy będziemy rozróżniać za pomocą atrybutu `name`
