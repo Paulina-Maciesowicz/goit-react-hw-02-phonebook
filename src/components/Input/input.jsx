@@ -93,22 +93,25 @@ export class SignUpForm extends React.Component {
     const { name } = this.state;
 
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Name
-          <input
-            type="text"
-            name="name"
-            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-            title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-            required
-            value={name}
-            onChange={this.handleChange}
-          />
-        </label>
+      <>
+        <h2>Phonebook</h2>
+        <form onSubmit={this.handleSubmit}>
+          <label>
+            Name
+            <input
+              type="text"
+              name="name"
+              pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+              title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+              required
+              value={name}
+              onChange={this.handleChange}
+            />
+          </label>
 
-        <button type="submit">Add contact {name}</button>
-      </form>
+          <button type="submit">Add contact {name}</button>
+        </form>
+      </>
     );
   }
 }
