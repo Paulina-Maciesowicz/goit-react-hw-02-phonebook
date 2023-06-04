@@ -48,13 +48,14 @@ export class SignUpForm extends React.Component {
   handleSubmit = evt => {
     evt.preventDefault();
     const { name } = this.state;
+    const newContact = this.state.name;
     console.log(this.state);
     console.log(`Name: ${name}`);
 
-
-
-    this.props.onSubmit({ ...this.state });
-    this.reset();
+this.setState({ contacts: [...this.state.contacts, newContact] });
+    
+    // this.props.onSubmit({ ...this.state });
+    // this.reset();
   };
 
   reset = () => {
