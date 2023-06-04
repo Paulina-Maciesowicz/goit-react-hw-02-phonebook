@@ -1,6 +1,13 @@
 import React from 'react';
+// import { nanoid } from 'nanoid';
+
 const INITIAL_STATE = {
-  contacts: ['Michael Jackson', 'Elvis Presley', 'Maciek Lazienka'],
+  contacts: [
+    'Michael Jackson',
+    'Elvis Presley',
+    'Maciek Lazienka',
+    'SpongeBob Kanciastoporty',
+  ],
   name: '',
 };
 export class Component extends React.Component {
@@ -41,8 +48,10 @@ export class SignUpForm extends React.Component {
   handleSubmit = evt => {
     evt.preventDefault();
     const { name } = this.state;
-
+    console.log(this.state);
     console.log(`Name: ${name}`);
+
+
 
     this.props.onSubmit({ ...this.state });
     this.reset();
