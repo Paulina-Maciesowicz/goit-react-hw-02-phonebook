@@ -1,32 +1,16 @@
 import React from 'react';
-const INITIAL_STATE = {
-  contacts: [
-    'Michael Jackson',
-    'Elvis Presley',
-    'Maciek Lazienka',
-    'SpongeBob Kanciastoporty',
-  ],
-  name: '',
-};
-export class Component extends React.Component {
-  state = { ...INITIAL_STATE };
-
-  render() {
-    return (
-      <>
-        <h2>Contacts</h2>
-        <ul>
-          {this.state.contacts.map(contact => (
-            <li>{contact}</li>
-          ))}{' '}
-        </ul>
-      </>
-    );
-  }
-}
+// import { nanoid } from 'nanoid';
 
 export class SignUpForm extends React.Component {
-  state = { ...INITIAL_STATE };
+  state = {
+    contacts: [
+      'Michael Jackson',
+      'Elvis Presley',
+      'Maciek Lazienka',
+      'SpongeBob Kanciastoporty',
+    ],
+    name: '',
+  };
 
   static defaultProps = {
     contacts: [],
@@ -34,6 +18,13 @@ export class SignUpForm extends React.Component {
 
   static propTypes = {
     contacts: Array,
+//     SignUpForm.propTypes = {
+//   contacts: PropTypes.arrayOf(
+//     PropTypes.shape({
+//       name: PropTypes.Array
+//     })
+//   ),
+// };
   };
 
   name = this.props.contacts;
@@ -46,14 +37,12 @@ export class SignUpForm extends React.Component {
   handleSubmit = evt => {
     evt.preventDefault();
     const { name } = this.state;
+    const newContact = name;
     console.log(this.state);
     console.log(`Name: ${name}`);
 
-
-    this.props.onSubmit({ ...this.state });
-    this.reset();
+    this.setState({ contacts: [...this.state.contacts, newContact] });
   };
-
   reset = () => {
     this.setState({
       contacts: ['Michael Jackson', 'Elvis Presley', 'Maciek Lazienka'],
@@ -83,6 +72,12 @@ export class SignUpForm extends React.Component {
 
           <button type="submit">Add contact {name}</button>
         </form>
+        <h2>Contacts</h2>
+        <ul>
+          {this.state.contacts.map(contact => (
+            <li>{contact}</li>
+          ))}{' '}
+        </ul>
       </>
     );
   }

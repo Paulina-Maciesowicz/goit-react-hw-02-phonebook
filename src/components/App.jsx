@@ -1,6 +1,5 @@
 import React from 'react';
 import { SignUpForm } from './Input/Input';
-import { Component } from './Input/Input';
 
 export const App = () => {
   return (
@@ -15,7 +14,6 @@ export const App = () => {
       }}
     >
       <SignUpForm />
-      <Component />
     </div>
   );
 };
