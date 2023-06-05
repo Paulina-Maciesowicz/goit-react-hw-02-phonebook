@@ -1,5 +1,5 @@
 import React from 'react';
-// import { nanoid } from 'nanoid';
+import { nanoid } from 'nanoid';
 
 export class SignUpForm extends React.Component {
   state = {
@@ -18,13 +18,14 @@ export class SignUpForm extends React.Component {
 
   static propTypes = {
     contacts: Array,
-//     SignUpForm.propTypes = {
-//   contacts: PropTypes.arrayOf(
-//     PropTypes.shape({
-//       name: PropTypes.Array
-//     })
-//   ),
-// };
+
+    //     SignUpForm.propTypes = {
+    //   contacts: PropTypes.arrayOf(
+    //     PropTypes.shape({
+    //       name: PropTypes.Array
+    //     })
+    //   ),
+    // };
   };
 
   name = this.props.contacts;
@@ -51,13 +52,14 @@ export class SignUpForm extends React.Component {
   };
 
   render() {
+    const nameInputId = nanoid();
     const { name } = this.state;
 
     return (
       <>
         <h2>Phonebook</h2>
         <form onSubmit={this.handleSubmit}>
-          <label>
+          <label id={nameInputId}>
             Name
             <input
               type="text"
