@@ -16,17 +16,17 @@ export class SignUpForm extends React.Component {
     contacts: [],
   };
 
-  static propTypes = {
-    contacts: Array,
+  // static propTypes = {
+  //   contacts: Array,
 
-    //     SignUpForm.propTypes = {
-    //   contacts: PropTypes.arrayOf(
-    //     PropTypes.shape({
-    //       name: PropTypes.Array
-    //     })
-    //   ),
-    // };
-  };
+  //   //     SignUpForm.propTypes = {
+  //   //   contacts: PropTypes.arrayOf(
+  //   //     PropTypes.shape({
+  //   //       name: PropTypes.Array
+  //   //     })
+  //   //   ),
+  //   // };
+  // };
 
   name = this.props.contacts;
 
@@ -76,7 +76,7 @@ export class SignUpForm extends React.Component {
         <h2>Contacts</h2>
         <ul>
           {this.state.contacts.map(contact => (
-            <li key={nanoid}>{contact}</li>
+            <li key={`${nanoid()}`}>{contact}</li>
           ))}{' '}
         </ul>
       </>
