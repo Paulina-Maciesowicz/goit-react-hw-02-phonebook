@@ -52,14 +52,13 @@ export class SignUpForm extends React.Component {
   };
 
   render() {
-    const nameInputId = nanoid();
     const { name } = this.state;
 
     return (
       <>
         <h2>Phonebook</h2>
         <form onSubmit={this.handleSubmit}>
-          <label id={nameInputId}>
+          <label>
             Name
             <input
               type="text"
@@ -77,7 +76,7 @@ export class SignUpForm extends React.Component {
         <h2>Contacts</h2>
         <ul>
           {this.state.contacts.map(contact => (
-            <li>{contact}</li>
+            <li key={nanoid}>{contact}</li>
           ))}{' '}
         </ul>
       </>
