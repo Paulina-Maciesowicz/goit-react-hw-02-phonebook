@@ -41,10 +41,11 @@ export class SignUpForm extends React.Component {
     };
     console.log(newContact);
     console.log(this.state);
-    console.log(`Name: ${name}`);
+    // console.log(`Name: ${name}`);
 
     this.setState({ contacts: [...this.state.contacts, newContact] });
   };
+
   reset = () => {
     this.setState({
       contacts: ['Michael Jackson', 'Elvis Presley'],
@@ -57,6 +58,7 @@ export class SignUpForm extends React.Component {
   render() {
     const { name } = this.state;
     const { number } = this.state;
+    const { filter } = this.state;
 
     return (
       <>
@@ -98,7 +100,7 @@ export class SignUpForm extends React.Component {
             pattern="^[a-zA-Za-яА-Я]+(([' -][a-zA-Za-яА-Я ])?[a-zA-Za-яА-Я]*)*$"
             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
             required
-            value={name}
+            value={filter}
             onChange={this.handleChange}
           />
         </label>
