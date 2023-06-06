@@ -6,8 +6,6 @@ export class SignUpForm extends React.Component {
     contacts: [
       'Michael Jackson',
       'Elvis Presley',
-      'Maciek Lazienka',
-      'SpongeBob Kanciastoporty',
     ],
     name: '',
     number: '',
@@ -47,7 +45,7 @@ export class SignUpForm extends React.Component {
   };
   reset = () => {
     this.setState({
-      contacts: ['Michael Jackson', 'Elvis Presley', 'Maciek Lazienka'],
+      contacts: ['Michael Jackson', 'Elvis Presley'],
       name: '',
       number: '',
     });
