@@ -90,8 +90,8 @@ export class SignUpForm extends React.Component {
         </form>
         <h2>Contacts</h2>
         <ul>
-          {this.state.contacts.map(contact => (
-            <li key={`${nanoid()}`}>{contact}</li>
+          {this.state.contacts.map(contact=> (
+            <li key={`${nanoid()}`}>{contact}:{number}</li>
           ))}{' '}
         </ul>
       </>
