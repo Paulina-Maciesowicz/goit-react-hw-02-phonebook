@@ -3,10 +3,7 @@ import { nanoid } from 'nanoid';
 
 export class SignUpForm extends React.Component {
   state = {
-    contacts: [
-      'Michael Jackson',
-      'Elvis Presley',
-    ],
+    contacts: [{ name: 'Paula Magnolia', number: '345678654' }],
     name: '',
     number: '',
   };
@@ -88,8 +85,12 @@ export class SignUpForm extends React.Component {
         </form>
         <h2>Contacts</h2>
         <ul>
-          {this.state.contacts.map(contact=> (
-            <li key={`${nanoid()}`}>{contact}:{number}</li>
+          {this.state.contacts.map(contact => (
+            <li key={`${nanoid()}`}>
+              {contact.name}
+              key={`${nanoid()}`}
+              {contact.number}
+            </li>
           ))}{' '}
         </ul>
       </>
