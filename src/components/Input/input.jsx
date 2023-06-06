@@ -34,7 +34,7 @@ export class SignUpForm extends React.Component {
 
   handleSubmit = evt => {
     evt.preventDefault();
-    const { name } = this.state;
+    // const { name } = this.state;
     const newContact = {
       name: this.state.name,
       number: this.state.number,
@@ -96,7 +96,7 @@ export class SignUpForm extends React.Component {
           Find contacts by name
           <input
             type="text"
-            name="name"
+            name="filter"
             pattern="^[a-zA-Za-яА-Я]+(([' -][a-zA-Za-яА-Я ])?[a-zA-Za-яА-Я]*)*$"
             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
             required
@@ -104,14 +104,19 @@ export class SignUpForm extends React.Component {
             onChange={this.handleChange}
           />
         </label>
-        <label></label>
         <ul>
-          {this.state.contacts.map(contact => (
-            <li key={`${nanoid()}`}>
-              {contact.name} {''}
-              {contact.number}
-            </li>
-          ))}{' '}
+          {this.state.contacts
+            .filter(contact =>
+              contact.name
+                .toLowerCase()
+                .includes(this.state.filter.toLowerCase())
+            )
+            .map(contact => (
+              <li key={`${nanoid()}`}>
+                {contact.name} {''}
+                {contact.number}
+              </li>
+            ))}{' '}
         </ul>
       </>
     );
