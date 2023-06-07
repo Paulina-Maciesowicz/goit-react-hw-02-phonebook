@@ -130,7 +130,10 @@ export class SignUpForm extends React.Component {
               <li key={`${nanoid()}`}>
                 {contact.name} {''}
                 {contact.number}
-                <button type="click" onClick={this.handleDelete(contact.id)}>
+                <button
+                  type="click"
+                  onClick={() => this.handleDelete(contact.id)}
+                >
                   delete
                 </button>
               </li>
