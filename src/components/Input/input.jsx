@@ -33,6 +33,11 @@ export class SignUpForm extends React.Component {
   };
 
   handleSubmit = evt => {
+    if (this.state.contacts.find((name, number) => {
+
+      
+    }));
+alert('duplex');
     evt.preventDefault();
     // const { name } = this.state;
     const newContact = {
