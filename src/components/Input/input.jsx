@@ -33,22 +33,32 @@ export class SignUpForm extends React.Component {
   };
 
   handleSubmit = evt => {
-    if (this.state.contacts.find((name, number) => {
-
-      
-    }));
-alert('duplex');
     evt.preventDefault();
+    if (
+      this.state.contacts.find(
+        elemContact => elemContact.name === this.state.name
+      )
+    ) {
+      alert('is already in contacts');
+      return;
+    }
     // const { name } = this.state;
     const newContact = {
       name: this.state.name,
       number: this.state.number,
+      id: nanoid(),
     };
     console.log(newContact);
     console.log(this.state);
     // console.log(`Name: ${name}`);
 
     this.setState({ contacts: [...this.state.contacts, newContact] });
+  };
+
+  handleDelete = id => {
+    this.setState(prevState => ({
+      contacts: prevState.contacts.filter(name => name.id !== id),
+    }));
   };
 
   reset = () => {
@@ -120,6 +130,9 @@ alert('duplex');
               <li key={`${nanoid()}`}>
                 {contact.name} {''}
                 {contact.number}
+                <button type="click" onClick={this.handleDelete(contact.id)}>
+                  delete
+                </button>
               </li>
             ))}{' '}
         </ul>
